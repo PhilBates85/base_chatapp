@@ -1,0 +1,16 @@
+{% block content %}
+<div class= "header_content d-flex flex-row align-items-center justify-content-start">
+<nav class="main_nav">
+    <ul style="list-style=type">
+        <li><a href="/">Home</a></li>
+        {% if user.is_authenticated %}
+        <li>Hello, {{user.username}}</li>
+        <li><a href="accounts/logout">Log Out</a></li>
+        {% else %}
+        <li><a href="/accounts/register">Registration</a></li>
+        <li><a href="/accounts/login">Log In</a></li>
+        {% endif %}
+    </ul>
+</nav>
+</div>
+{% endblock %}
